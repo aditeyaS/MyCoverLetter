@@ -1,7 +1,13 @@
-export function Logo() {
+import { cn } from "@/lib/utils";
+
+interface Props {
+  className: string;
+}
+
+export function Logo({ className }: Props) {
   return (
     <svg
-      className="h-64"
+      className={cn("w-fit", className)}
       viewBox="0 0 90 90"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

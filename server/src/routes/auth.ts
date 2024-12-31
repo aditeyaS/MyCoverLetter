@@ -8,7 +8,7 @@ import STATUS_CODES from "../const/status-codes";
 import config from "../const/config";
 import ERROR_MESSAGES from "../const/error-messages";
 import { VerifyToken } from "../middleware/verify-token";
-import { env } from "../config/env";
+import { env } from "../config";
 
 const authRouter = express.Router();
 

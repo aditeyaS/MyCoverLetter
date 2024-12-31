@@ -3,7 +3,7 @@ import jwt, { JwtPayload } from "jsonwebtoken";
 
 import config from "../const/config";
 import STATUS_CODES from "../const/status-codes";
-import { env } from "../config/env";
+import { env } from "../config";
 
 declare global {
   namespace Express {
@@ -26,7 +26,7 @@ export const VerifyToken = (
     return;
   }
   try {
-    const decoded = jwt.verify(token, env.JWT_KEY as string);
+    const decoded = jwt.verify(token, env.JWT_KEY);
     req.userId = (decoded as JwtPayload).userId;
     next();
   } catch (error) {

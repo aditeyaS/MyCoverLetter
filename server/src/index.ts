@@ -3,11 +3,10 @@ import express, { Express } from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import "dotenv/config";
-
-import { env } from "./config/env";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/user";
 import templateRoutes from "./routes/template";
+import { env } from "./config";
 
 mongoose.connect(env.MONGO_DB_URL);
 

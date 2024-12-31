@@ -1,17 +1,22 @@
+import { lazy } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import NotFound from "./not-found";
-import Landing from "./landing";
 
+import NotFound from "./not-found";
 import AuthLayout from "./auth/_layout";
-import Login from "./auth/login";
-import ForgotPassword from "./auth/forgot-password";
-import Register from "./auth/register";
 import AppLayout from "./app/_layout";
-import Dashboard from "./app/dashboard";
-import New from "./app/new";
-import Profile from "./app/profile";
-import View from "./app/[templateId]";
-import Edit from "./app/[templateId]/edit";
+
+const Landing = lazy(() => import("./landing"));
+
+const Login = lazy(() => import("./auth/login"));
+const Register = lazy(() => import("./auth/register"));
+const ForgotPassword = lazy(() => import("./auth/forgot-password"));
+
+const Dashboard = lazy(() => import("./app/dashboard"));
+const New = lazy(() => import("./app/new"));
+const View = lazy(() => import("./app/[templateId]"));
+const Edit = lazy(() => import("./app/[templateId]/edit"));
+
+const Profile = lazy(() => import("./app/profile"));
 
 const router = createBrowserRouter([
   {
